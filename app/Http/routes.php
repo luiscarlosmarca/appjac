@@ -14,3 +14,29 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('inicio',[
+'uses'	=>'HomeController@index',
+'as'	=>'inicio'
+]);
+
+
+
+// Authentication routes...
+Route::get('ingreso',[
+'uses'	=>'Auth\AuthController@getLogin',
+'as'	=>'login'
+]);
+Route::post('ingreso', 'Auth\AuthController@postLogin');
+
+Route::get('cerrar-sesión', [
+'uses'	=>'Auth\AuthController@getLogout',
+'as'	=>'cerrar'
+]);  
+
+// Registration routes...
+Route::get('crear-cuenta',[
+'uses'	=> 'Auth\AuthController@getRegister',
+'as'	=>'registro'
+]);
+Route::post('crear-cuenta', 'Auth\AuthController@postRegister');	

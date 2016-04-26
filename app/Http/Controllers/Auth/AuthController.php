@@ -60,6 +60,16 @@ class AuthController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
-        ]);
+        ]); 
+    }
+
+    public function loginPath()
+    {
+        return route('login');
+    }
+
+    public function redirectPath()
+    {
+        return route('inicio');
     }
 }

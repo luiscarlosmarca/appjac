@@ -4,11 +4,11 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Hoteles de Puerto Salgar | Turistiando 1.0</title>
+	<title>App web JAC 1.0</title>
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
    
-    {!! Html::style('css/app.css') !!}
+  
 
 	<!-- Fonts -->
 	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
@@ -46,14 +46,15 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">Turistiando App web</a>
+				<a class="navbar-brand" href="#"> App web JAC</a>
 			</div>
 
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li><a href="/">Bienvenid@</a></li>
-					<li><a href="/">Hoteles Recientes</a></li>
-					<li><a href="/populares">Hoteles populares</a></li>
+					<li><a href="/">Inicio</a></li>
+					<li><a href="/">Beneficiados</a></li>
+				
+					<li><a href="/">Generar Certificado de Residencia</a></li>
 					
 				</ul>
 
