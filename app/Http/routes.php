@@ -21,6 +21,12 @@ Route::get('inicio',[
 ]);
 
 
+//Beneficiados
+Route::get('/beneficiados',[
+'uses'	=>'BeneficiadoController@index',
+'as'	=>'beneficiado'
+]);
+
 
 // Authentication routes...
 Route::get('ingreso',[

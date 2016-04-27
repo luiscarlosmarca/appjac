@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-<title>Iniciar sesion| App web JAC 1.0</title>
+
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">

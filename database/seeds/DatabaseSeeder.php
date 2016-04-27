@@ -13,8 +13,32 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
        Model::unguard();
-              
+        //trucating all the taables
+
+        DB::statement('SET FOREIGN_KEY_CHECKS=0');
+
+        $tables=array(
+            'juntas',
+            'users',
+            'password_resets',
+            
+            'eventos',
+            'comentarios',
+            'beneficiados',
+           
+
+            );
+
+        foreach ($tables as $table)
+
+        {
+            DB::table($table)->truncate();
+        }
+       
+        DB::statement('SET FOREIGN_KEY_CHECKS=1');
         $this->call(UserTableSeeder::class);
+
+        Model::reguard();
 
      
     }
