@@ -5,8 +5,7 @@
 				    
 				    {!!Form::text('nombre',null,['class'=>'form-control','placeholder'=>'Nombre del Beneficiado:'])!!}
 				    {!!Form::text('cedula',null,['class'=>'form-control','placeholder'=>'Cedula del Beneficiado:'])!!}
-				  	{!!Form::text('barrio',null,['class'=>'form-control','placeholder'=>'Nombre del barrio:'])!!}
- 			 				
+				  	
 
  -->
  			  </div>

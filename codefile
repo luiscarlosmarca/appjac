@@ -1,0 +1,39 @@
+public function store()
+    {
+         $input = Input::all();
+
+         $this->uploadImageForm->validate($input);
+         $user = Auth::user();
+         $img = new Image;
+
+         $img->title          = Input::get('title');
+         $img->description    = Input::get('description');
+         $img->status         = Input::get('status');
+        
+
+          if (Input::hasFile('file'))
+        {
+
+        $file       = Input::file('file');
+
+        $name       = time() . '-' . $file->getClientOriginalName();
+
+        $file       = $file->move(public_path(). '\images', $name);
+
+        $image      = Imag::make($file->getRealPath())->resize('320','240')->save($file);
+
+        $img->file  = $name;
+
+        
+        
+        } 
+           // Add the connection between the image and the user
+          $user->images()->attach($img->id);
+         if ($img->save()) 
+         {
+            return Redirect::back()->with(['global' => 'Your image file has been uploaded successfully.', 'type' => 'success']);
+         }else
+         {
+            return Redirect::back()->with(['global'=> 'Your upload could not be succeeded.' , 'type' => 'danger']);
+         }
+    }

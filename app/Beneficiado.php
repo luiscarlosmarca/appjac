@@ -31,29 +31,26 @@ class Beneficiado extends Model
 			
 		
 	}
-	public function scopeBarrio($query,$barrio)
-	{
-		
-		if (trim($barrio) != "")
-		{
-		$query->where(\DB::raw("CONCAT(barrio)"),"LIKE","%$barrio%");
-		}
-			
-		
-	}
+	
 
     public function getfullnameAttribute()
 	{
 		return $this->nombres.' 	'.$this->apellidos;
 	}
 
-	public static function filter($nombre,$barrio,$cedula)
-		{
+	public static function filter($nombre,$cedula)
+	{
 			return Beneficiado::nombre($nombre)
-				->barrio($barrio)
+				
 				->cedula($cedula)
 				->orderBy('nombres','ASC')
 				->paginate();
-		}
+	}
+
+	public function junta()
+   {
+   	//El beneficiado esta afiliado a una junta
+   	return $this->hasOne('App\Junta','id','junta_id');
+   }
 	
 }

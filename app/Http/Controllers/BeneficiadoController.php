@@ -20,7 +20,7 @@ class BeneficiadoController extends Controller
    public function index(Request $request)
     {
         
-        $beneficiados= Beneficiado::filter($request->get('nombre'),$request->get('barrio'),$request->get('cedula'));
+        $beneficiados= Beneficiado::filter($request->get('nombre'),$request->get('cedula'));
 
          return view ('beneficiados.index', compact('beneficiados'));
     }
@@ -80,15 +80,11 @@ class BeneficiadoController extends Controller
     {
         //
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+public function details($id)
     {
-        //
+        $beneficiado=Beneficiado::findOrFail($id);
+        
+
+        return view('beneficiados.edit',compact('beneficiado'));
     }
 }

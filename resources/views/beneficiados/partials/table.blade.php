@@ -25,7 +25,7 @@
  								 						
  				   <td>
  									
- 						<a href="#">Ver detalles </a>
+ 						<a href="{{route('beneficiado.detail',$beneficiado)}}">Ver detalles </a>
  						<a href="#">Generar certificado.</a>
  				    </td>
  								

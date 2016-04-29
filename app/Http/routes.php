@@ -27,6 +27,13 @@ Route::get('/beneficiados',[
 'as'	=>'beneficiado'
 ]);
 
+Route::get('/ver-detalles-beneficiados/{id}',[
+'uses'	=>'BeneficiadoController@details',
+'as'	=>'beneficiado.detail'
+]);
+
+
+
 
 // Authentication routes...
 Route::get('ingreso',[
