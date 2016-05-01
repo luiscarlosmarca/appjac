@@ -54,7 +54,7 @@
 					<li><a href="/">Inicio</a></li>
 					<li><a href="{{route('beneficiado')}}">Beneficiados</a></li>
 				
-					<li><a href="/">Generar Certificado de Residencia</a></li>
+					<li><a href="{{route('beneficiado.create')}}">Crear beneficiado</a></li>
 					
 				</ul>
 
@@ -62,7 +62,7 @@
 					@if (Auth::guest())
 						<li><a href="{{route('login')}}">Iniciar Sesión</a></li>
 						
-						<li><p><a class="btn btn-success btn-lg"href="{{route('registro')}}" role="button">Crear Beneficiado </a></p></li>
+						<li><p><a class="btn btn-success btn-lg"href="{{route('beneficiado.create')}}" role="button">Crear Beneficiado </a></p></li>
 					@else
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>

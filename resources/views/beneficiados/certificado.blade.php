@@ -18,8 +18,7 @@
 				<div class="panel-body">
 																						
 								@include('beneficiados.partials.fieldsCertificado')
-					
-									 								
+										
 					
 				 </div>
 						

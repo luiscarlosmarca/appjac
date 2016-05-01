@@ -66,7 +66,7 @@ $factory->define(App\Beneficiado::class, function (Faker\Generator $faker) {
         'direccion'			 => $faker->address,
         'casaPropia'		 => true,
         'feResidencia'		 => $faker->date($format = 'Y-m-d', $max = 'now'),
-        'user_id'			 => rand(1,5),
+        
         'junta_id'			 => rand(1,5),
     ];
 });

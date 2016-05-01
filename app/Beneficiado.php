@@ -9,7 +9,7 @@ use Carbon\Carbon;
 class Beneficiado extends Model
 {
     protected $table="beneficiados";
-	protected $fillable = ['nombres','apellidos','barrio','cedula','ciudadCC','direcion','telefono','feNa','feResidencia','reciboServicio','casaPropia',''];
+	protected $fillable = ['nombres','apellidos','barrio','cedula','ciudadCC','direccion','telefono','feNa','feResidencia','reciboServicio','casaPropia','junta_id','entidad'];
 
 	public function scopeNombre($query,$nombre)
 	{

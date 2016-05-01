@@ -22,15 +22,31 @@ Route::get('inicio',[
 
 
 //Beneficiados
-Route::get('/beneficiados',[
+Route::get('/beneficiados',[//mostrar listado de beneficiados
 'uses'	=>'BeneficiadoController@index',
 'as'	=>'beneficiado'
 ]);
 
-Route::get('/ver-detalles-beneficiados/{id}',[
+Route::get('/ver-detalles-beneficiados/{id}',[//ver el detalle de cada beneficiado
 'uses'	=>'BeneficiadoController@details',
 'as'	=>'beneficiado.detail'
 ]);
+
+//*** admin
+
+Route::group(['middleware'=>'auth'], function(){
+
+	Route::get('/crear-beneficiado/',[//mostrar formulario para crear un nuevo beneficiado
+	'uses'	=>'BeneficiadoController@create',
+	'as'	=>'beneficiado.create'
+	]);
+
+	Route::post('/crear-beneficiado/',[//mostrar formulario para crear un nuevo beneficiado
+	'uses'	=>'BeneficiadoController@store',
+	'as'	=>'beneficiado.store'
+	]);
+});
+//***
 
 //certficados
 
@@ -39,7 +55,12 @@ Route::get('/generar-certificado/{id}',[
 'as'	=>'beneficiado.certificado'
 ]);
 
+///
 
+
+
+
+//***
 
 
 //
@@ -61,9 +82,11 @@ Route::get('cerrar-sesión', [
 'as'	=>'cerrar'
 ]);  
 
+
 // Registration routes...
 Route::get('crear-cuenta',[
 'uses'	=> 'Auth\AuthController@getRegister',
 'as'	=>'registro'
 ]);
+
 Route::post('crear-cuenta', 'Auth\AuthController@postRegister');	

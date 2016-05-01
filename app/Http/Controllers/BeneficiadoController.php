@@ -5,12 +5,14 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Beneficiado;
 use \Input as Input;
-//use App\Http\Requests\CreateCanchaRequest; validaciones
-//use App\Http\Requests\EditCanchaRequest;   valideaciones
+use App\Http\Requests\CreateBeneficiadoRequest; 
+use App\Http\Requests\EditBeneficiadoRequest;   
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Barryvdh\DomPDF\Facade as PDF;
 
+
+use Illuminate\Support\Facades\Validator;
 class BeneficiadoController extends Controller
 {
     /**
@@ -34,7 +36,7 @@ class BeneficiadoController extends Controller
      */
     public function create()
     {
-        //
+       return view('beneficiados.create');
     }
 
     /**
@@ -43,11 +45,35 @@ class BeneficiadoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
+    public function store(CreateBeneficiadoRequest $request)
+    { 
+
+        if(Input::hasFile('reciboPublico'))
+        {
+
+            $file = Input::file('reciboPublico');
+            $file->move('upload',$file->getClientOriginalName());
+            $image='img src="/upload/'.$file->getClientOriginalName().'"';
+                
+            $beneficiados = new Beneficiado($request->all());
+            $beneficiados->reciboServicio=$file->getClientOriginalName();
+          
+            $beneficiados->save();
+       
+      
+                Session::flash('message',$beneficiados->full_name.' Fue creado');
+            
+                 return redirect()->route('beneficiado');
+        }
+      
+        $beneficiado=Beneficiado::create($request->all());
+         Session::flash('message',$beneficiado->full_name.' Fue creado');
+        return redirect()->route('beneficiado');
     }
 
+
+
+   
     /**
      * Display the specified resource.
      *

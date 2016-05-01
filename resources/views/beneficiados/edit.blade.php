@@ -18,7 +18,38 @@ Detalles del Beneficiado
 							
 								@include('beneficiados.partials.fields')
 					
-									 
+								Recibo del servicio publico
+									<p>
+								<a href="/upload/beneficiado/{{$beneficiado->reciboServicio}}" target="black">
+							<img src="/upload/beneficiado/{{$beneficiado->reciboServicio}}" height="500" width="300"> </a>
+
+									<p>
+
+
+									<div class="panel panel-danger">
+									  <div class="panel-heading"><h2> Datos de la Accion Comunal</h2></div>
+									  <div class="panel-body">
+
+									   <p>
+											Esta afiliado a la Accion comunal: {{$beneficiado->junta->nombre}}
+										</p>
+
+										<p>
+											Del barrio: {{$beneficiado->junta->barrio}}
+										</p>
+
+										<p>
+											Dirección de la sede: {{$beneficiado->junta->direccionSede}}
+										</p>
+										
+										<p>
+											Telefono: {{$beneficiado->junta->telefono}}
+										</p>
+
+									  </div>
+									  <div class="panel-footer">Numero de resolución: {{$beneficiado->junta->numResolucion}}</div>
+									</div>
+
 								
 								<div class="col-sm-6">
 									<button type="submit" class="btn btn-primary">Actualizar datos</button>

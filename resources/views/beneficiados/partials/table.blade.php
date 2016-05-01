@@ -25,8 +25,8 @@
  								 						
  				   <td>
  									
- 						<a href="{{route('beneficiado.detail',$beneficiado)}}">Ver detalles </a>
- 						<a  href="{{route('beneficiado.certificado',$beneficiado)}}">Generar certificado.</a>
+ 						<a href="{{route('beneficiado.detail',$beneficiado)}}"><img src="/upload/detalles.png" height="50" width="50" alt="Ver detalles"></a>
+ 						<a  href="{{route('beneficiado.certificado',$beneficiado)}}"><img src="/upload/pdf.jpg" height="50" width="50" alt="Generar Certificado"></a>
  				    </td>
  								
  			</tr>

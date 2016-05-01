@@ -25,8 +25,7 @@ class CreateBeneficiadosTable extends Migration
             $table->string('direccion',50);
             $table->boolean('casaPropia');
             $table->date('feResidencia');
-            $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
+            
             $table->integer('junta_id')->unsigned();
             $table->foreign('junta_id')->references('id')->on('juntas');
             $table->timestamps();
