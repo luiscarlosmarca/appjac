@@ -21,6 +21,8 @@ class CreateJuntasTable extends Migration
             $table->string('barrio');
             $table->string('direccionSede');
             $table->string('presidenteCC');
+            $table->string('nombreP');
+            $table->string('nombreS');
             $table->string('secretariaCC');
             $table->string('telefono');
             $table->string('firmaP');

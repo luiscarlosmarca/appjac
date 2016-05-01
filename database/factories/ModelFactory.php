@@ -27,6 +27,8 @@ $factory->define(App\Junta::class, function (Faker\Generator $faker) {
         'feResolucion'		 => $faker->year($max = 'now'),
         'numResolucion' 	 => rand(7891234,92313242),
         'barrio'			 => $faker->randomElement(['Purnio','Las Ferias','Guarino','La Concordia']),
+        'nombreP'            => $faker->name,
+        'nombreS'            => $faker->name,
         'presidenteCC' 		 => rand(7891234,92313242),
         'secretariaCC'		 => rand(7891234,92313242),
         'direccionSede'		 => $faker->address,
@@ -55,6 +57,7 @@ $factory->define(App\Beneficiado::class, function (Faker\Generator $faker) {
     return [
         'nombres'			 => $faker->name,
         'apellidos'		     => $faker->lastname,
+        'entidad'          => $faker->randomElement(['Secretaria de Planeacion y Desarrollo Social','CONSOL','UDEA','SENA']),
         'feNa' 			     => $faker->date($format = 'Y-m-d', $max = 'now'),
         'cedula'		   	 => rand(7891234,92313242),
         'ciudadCC'			 => $faker->randomElement(['La Dorada','Pto Boyaca','Medellin','Bogota']),

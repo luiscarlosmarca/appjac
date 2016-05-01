@@ -9,6 +9,7 @@ use \Input as Input;
 //use App\Http\Requests\EditCanchaRequest;   valideaciones
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Barryvdh\DomPDF\Facade as PDF;
 
 class BeneficiadoController extends Controller
 {
@@ -53,17 +54,15 @@ class BeneficiadoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function certificado($id)
     {
-        //
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+        $beneficiado=Beneficiado::findOrFail($id);
+        $pdf = PDF::loadView('beneficiados.certificado',compact('beneficiado'));
+        return $pdf->stream();
+
+
+    }
     public function edit($id)
     {
         //

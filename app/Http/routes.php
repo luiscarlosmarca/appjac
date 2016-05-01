@@ -32,7 +32,21 @@ Route::get('/ver-detalles-beneficiados/{id}',[
 'as'	=>'beneficiado.detail'
 ]);
 
+//certficados
 
+Route::get('/generar-certificado/{id}',[
+'uses'	=>'BeneficiadoController@certificado',
+'as'	=>'beneficiado.certificado'
+]);
+
+
+
+
+//
+
+Route::get('/certificado', function () {
+    return view('beneficiados.certificado');
+});
 
 
 // Authentication routes...

@@ -70,6 +70,7 @@ Recibo del servicio publico
 <a href="/upload/beneficiado/{{$beneficiado->reciboServicio}}.jpg" target="black">
 <img src="/upload/beneficiado/{{$beneficiado->reciboServicio}}.jpg" height="200" width="500">
 </a>
+<img src="/upload/logo.png">
 <p>
 
 

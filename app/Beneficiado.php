@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Session;
+use Carbon\Carbon;
 
 class Beneficiado extends Model
 {
@@ -52,5 +53,17 @@ class Beneficiado extends Model
    	//El beneficiado esta afiliado a una junta
    	return $this->hasOne('App\Junta','id','junta_id');
    }
+
+   public function getAgeAttribute()
+	{
+		
+		return Carbon::parse($this->feResidencia)->age;
+	}
 	
+	public function getHoyAttribute()
+	{
+		return Carbon::now()->format('d-m-Y');
+
+		
+	}
 }

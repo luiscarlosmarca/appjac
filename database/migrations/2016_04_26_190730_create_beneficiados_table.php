@@ -18,6 +18,7 @@ class CreateBeneficiadosTable extends Migration
             $table->string('apellidos');
             $table->date('feNa');
             $table->string('cedula');
+             $table->string('entidad');
             $table->string('ciudadCC');
             $table->string('reciboServicio');//file
             $table->string('telefono');
