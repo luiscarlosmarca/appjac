@@ -1,5 +1,6 @@
 <div class="col-sm-6">
 
+
 		<div class="form-group">
 									{!!Form::label('Nombres', 'Nombres') !!}
 							   		{!!Form::text('nombres',null,['class'=>'form-control floating-label','requiered']) !!}
@@ -12,11 +13,7 @@
 							   		{!!Form::text('apellidos',null,['class'=>'form-control floating-label','requiered']) !!}
 		 </div>
 
-		<div class="form-group">
-								{!!Form::label('Cedula', 'Cedula') !!}
-								{!!Form::text('cedula' ,null,['class'=>'form-control floating-label']) !!}
-		 </div>
-
+	
 
 		  <div class="form-group">
 
@@ -28,20 +25,15 @@
   		<div class="form-group">
 
 							
-									{!!Form::label('Ciudadcc', 'Ciudad de expedición de la Cedula') !!}
-							   		{!!Form::text('ciudadCC',null,['class'=>'form-control floating-label','requiered']) !!}
+									{!!Form::label('Dirección', 'Direccion') !!}
+							   		{!!Form::text('direccion',null,['class'=>'form-control floating-label','requiered']) !!}
 		 </div>
 
  </div>
 <div class="col-sm-6">
 		
 		 
-		<div class="form-group">
-
-							
-									{!!Form::label('Dirección', 'Direccion') !!}
-							   		{!!Form::text('direccion',null,['class'=>'form-control floating-label','requiered']) !!}
-		 </div>
+		
 
 		 <div class="form-group">
 

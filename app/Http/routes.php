@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 Route::get('inicio',[
-'uses'	=>'HomeController@index',
+'uses'	=>'EventoController@index',
 'as'	=>'inicio'
 ]);
 
@@ -27,15 +27,12 @@ Route::get('/beneficiados',[//mostrar listado de beneficiados
 'as'	=>'beneficiado'
 ]);
 
-Route::get('/ver-detalles-beneficiados/{id}',[//ver el detalle de cada beneficiado
-'uses'	=>'BeneficiadoController@details',
-'as'	=>'beneficiado.detail'
-]);
+
 
 //*** admin
 
 Route::group(['middleware'=>'auth'], function(){
-
+//****beneficiado
 	Route::get('/crear-beneficiado/',[//mostrar formulario para crear un nuevo beneficiado
 	'uses'	=>'BeneficiadoController@create',
 	'as'	=>'beneficiado.create'
@@ -45,6 +42,63 @@ Route::group(['middleware'=>'auth'], function(){
 	'uses'	=>'BeneficiadoController@store',
 	'as'	=>'beneficiado.store'
 	]);
+
+	Route::get('/ver-detalles-beneficiados/{id}',[//ver el detalle de cada beneficiado
+	'uses'	=>'BeneficiadoController@details',
+	'as'	=>'beneficiado.detail'
+	]);
+
+	Route::patch('/ver-detalles-beneficiados/{id}',[
+	'uses'	=>'BeneficiadoController@update',
+	'as'	=>'beneficiado.update'
+	]);
+
+	Route::delete('/eliminar-beneficiados/{id}',[
+	'uses'	=>'BeneficiadoController@destroy',
+	'as'	=>'beneficiado.destroy'
+	]);
+//** juntas
+	
+	Route::get('/ver-detalles-juntas/{id}',[//ver el detalle de cada junta
+	'uses'	=>'JuntaController@details',
+	'as'	=>'junta.detail'
+	]);
+
+	Route::patch('/ver-detalles-juntas/{id}',[
+	'uses'	=>'JuntaController@update',
+	'as'	=>'junta.update'
+	]);
+	
+	Route::get('/crear-junta/',[
+	'uses'	=>'JuntaController@create',
+	'as'	=>'junta.create'
+	]);
+	
+	Route::post('/crear-junta/',[
+	'uses'	=>'JuntaController@store',
+	'as'	=>'junta.store'
+	]);
+
+
+	//** Eventos
+	
+
+	Route::patch('/ver-detalles-eventos/{id}',[
+	'uses'	=>'EventoController@details',
+	'as'	=>'evento.details'
+	]);
+	
+	Route::get('/crear-evento/',[
+	'uses'	=>'EventoController@create',
+	'as'	=>'evento.create'
+	]);
+	
+	Route::post('/crear-evento/',[
+	'uses'	=>'EventoController@store',
+	'as'	=>'evento.store'
+	]);
+
+
 });
 //***
 
@@ -58,6 +112,19 @@ Route::get('/generar-certificado/{id}',[
 ///
 
 
+//Juntas
+Route::get('/juntas',[//mostrar listado de juntas
+'uses'	=>'JuntaController@index',
+'as'	=>'junta'
+]);
+
+
+///***********
+//eventos
+Route::get('/ver-detalles-eventos/{id}',[//ver el detalle de cada junta
+	'uses'	=>'EventoController@details',
+	'as'	=>'evento.detail'
+	]);
 
 
 //***

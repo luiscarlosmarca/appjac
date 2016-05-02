@@ -32,8 +32,8 @@ class CreateJuntaRequest extends Request
             'numResolucion' =>'required|unique:juntas|integer',
             'barrio'        =>'required|string',
             'direccionSede' =>'required',
-            'presidenteCC'  =>'required|unique:juntas|integer',
-            'secretariaCC'  =>'required|unique:juntas|integer'
+            'presidenteCC'  =>'required|integer',
+            'secretariaCC'  =>'required|integer'
             
         ];
     }

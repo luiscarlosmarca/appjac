@@ -53,7 +53,7 @@ class BeneficiadoController extends Controller
 
             $file = Input::file('reciboPublico');
             $file->move('upload',$file->getClientOriginalName());
-            $image='img src="/upload/'.$file->getClientOriginalName().'"';
+            $image='img src="/upload/beneficiado'.$file->getClientOriginalName().'"';
                 
             $beneficiados = new Beneficiado($request->all());
             $beneficiados->reciboServicio=$file->getClientOriginalName();
@@ -89,9 +89,14 @@ class BeneficiadoController extends Controller
 
 
     }
-    public function edit($id)
+    public function destroy($id)
     {
-        //
+        $beneficiado = Beneficiado::find($id);
+ 
+        $beneficiado->delete();
+ 
+         Session::flash('message',$beneficiado->full_name.'Beneficiado eliminado');
+        return redirect()->route('beneficiado');
     }
 
     /**
@@ -101,9 +106,16 @@ class BeneficiadoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(EditBeneficiadoRequest $request,$id)
     {
-        //
+
+    $beneficiado=Beneficiado::findOrFail($id);
+    $beneficiado->fill($request->all());
+    $beneficiado->save();
+
+    Session::flash('message',$beneficiado->full_name.' Se actualizo los datos');
+    return redirect()->route('beneficiado');
+
     }
 public function details($id)
     {

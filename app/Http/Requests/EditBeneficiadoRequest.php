@@ -26,8 +26,6 @@ class EditBeneficiadoRequest extends Request
         return [
         'nombres'       =>'required|string',
         'apellidos'     =>'required|string',
-        'cedula'        =>'required|integer|unique:beneficiados,cedula,'.$this->route->getParameter('beneficiados'),
-        'ciudadCC'      =>'required',
         'feNa'          =>'required|date',
         'feResidencia'  =>'required|date',
         'direccion'     =>'required'

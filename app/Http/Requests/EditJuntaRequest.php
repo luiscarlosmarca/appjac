@@ -29,14 +29,14 @@ class EditJuntaRequest extends Request
             'nombreP'       =>'required|string',
             'nombreS'       =>'required|string',
             'feResolucion'  =>'required|date',
-            'numResolucion' =>'required|integer|unique:juntas,numResolucion'.$this->route->getParameter('juntas'),
+            
             'barrio'        =>'required|string',
             'direccionSede' =>'required',
-            'presidenteCC'   =>'required|integer|unique:juntas,presidenteCC,'.$this->route->getParameter('juntas'),
+            'presidenteCC'   =>'required|integer',
             
-            'secretariaCC'   =>'required|integer|unique:juntas,secretariaCC,'.$this->route->getParameter('juntas'),
+            'secretariaCC'   =>'required|integer'
             
-
+            ];
              
     }
 }

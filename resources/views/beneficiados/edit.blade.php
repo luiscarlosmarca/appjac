@@ -7,16 +7,16 @@ Detalles del Beneficiado
 	<div class="row">
 		<div class="col-md-10 col-md-offset-1">
 			<div class="panel panel-default">
-				<div class="panel-heading">Detalles del Beneficiado</div>
+				<div class="panel-heading">Detalles del Beneficiado: Cedula: <b>{{$beneficiado->cedula}}</b></div>
 				
 				@include('error')
 
-						<!-- //amarramos el formulario con el metodo para q carge los valores q le corresponda a dicho
-						id, y tambien le mandamos  el id al metodo update -->
-						
-						{!!Form::model($beneficiado,['route'=>['beneficiado.detail',$beneficiado], 'method' => 'PUT']) !!} 
-							
+					{!!Form::model($beneficiado,['route'=>['beneficiado.update',$beneficiado], 'method' => 'PATCH']) !!} 
+
+								
 								@include('beneficiados.partials.fields')
+
+								
 					
 								Recibo del servicio publico
 									<p>
@@ -53,10 +53,16 @@ Detalles del Beneficiado
 								
 								<div class="col-sm-6">
 									<button type="submit" class="btn btn-primary">Actualizar datos</button>
+									 {!!Form::close() !!} 
+									 <div class="col-sm-6">
+									@include('beneficiados.partials.delete')
+
+									</div>
 								</div>
 
+
 								
-						 {!!Form::close() !!} 
+						
 						  </div>
 								
 						

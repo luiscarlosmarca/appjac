@@ -73,13 +73,5 @@ $factory->define(App\Beneficiado::class, function (Faker\Generator $faker) {
 
 
 
-$factory->define(App\Comentario::class, function (Faker\Generator $faker) {
-    return [
-        'autor'			 => $faker->name,
-        'email'		     => $faker->safeEmail,
-        'comentario' 	 => $faker->words(5, true),
-        'evento_id'		 => rand(1,9),	
-        
-                
-    ];
-});
+
+

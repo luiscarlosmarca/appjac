@@ -51,18 +51,24 @@
 
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li><a href="/">Inicio</a></li>
+					<li><a href="{{route('inicio')}}">Inicio</a></li>
 					<li><a href="{{route('beneficiado')}}">Beneficiados</a></li>
 				
-					<li><a href="{{route('beneficiado.create')}}">Crear beneficiado</a></li>
+					
+
+					<li><a href="{{route('beneficiado.create')}}">Crear un nuevo beneficiado</a></li>
+
+					<li><a href="{{route('junta')}}">Juntas</a></li>
+
+					<li><a href="{{route('junta.create')}}">Crear una nueva Junta</a></li>
 					
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
 					@if (Auth::guest())
-						<li><a href="{{route('login')}}">Iniciar Sesión</a></li>
+					
 						
-						<li><p><a class="btn btn-success btn-lg"href="{{route('beneficiado.create')}}" role="button">Crear Beneficiado </a></p></li>
+						<li><p><a class="btn btn-success btn-lg"href="{{route('login')}}" role="button">Iniciar Sesión</a></p></li>
 					@else
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>

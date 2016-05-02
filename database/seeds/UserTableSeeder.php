@@ -29,9 +29,7 @@ class UserTableSeeder extends Seeder
 
         factory(App\Beneficiado::class,20)->create();
 
-        factory(App\Comentario::class,20)->create();
-    
-        
+       
        
 
     }
