@@ -9,21 +9,17 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateEventoRequest; 
 use \Input as Input;
 use Illuminate\Support\Facades\Session;
+
 class EventoController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Httn evento::nombre($nombre)
-                
-                ->cedula($cedula)
-                ->orderBy('nombres','ASC')
-                ->paginate();
-    }p\Response
+     * @return 
      */
-    public function index()
+    public function index(Request $request)
     {
-        $eventos=Evento::paginate(5);
+        $eventos=Evento::filtro($request->get('nombre'));
         return view('eventos/index', compact('eventos'));
     }
 
@@ -45,6 +41,26 @@ class EventoController extends Controller
      */
     public function store(CreateEventoRequest $request)
     {
+
+        if(Input::hasFile('imagen'))
+        {
+
+            $file = Input::file('imagen');
+            $file->move('upload',$file->getClientOriginalName());
+            $image='img src="/upload/eventos'.$file->getClientOriginalName().'"';
+                
+            $eventos = new Evento($request->all());
+            $eventos->imagen=$file->getClientOriginalName();
+          
+            $eventos->save();
+       
+      
+                Session::flash('message',$eventos->nombre.' Fue creado');
+            
+                 return redirect()->route('inicio');
+        }
+      
+
         $evento=Evento::create($request->all());
          Session::flash('message',$evento->nombre.' Fue creado');
         return redirect()->route('inicio');
@@ -59,10 +75,13 @@ class EventoController extends Controller
     public function details($id)
     {
        $evento=Evento::findOrFail($id);
-        
+       return view('eventos/details',compact('evento'));
+    }           
+                 
 
-        return view('eventos/details',compact('evento'));
-    }
+           
+       
+   
 
     /**
      * Show the form for editing the specified resource.
@@ -72,7 +91,8 @@ class EventoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $evento=Evento::findOrFail($id);
+       return view('eventos/edit',compact('evento'));
     }
 
     /**
@@ -84,7 +104,13 @@ class EventoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $evento=evento::findOrFail($id);
+        $evento->fill($request->all());
+        $evento->save();
+
+        Session::flash('message',$evento->full_name.' Se actualizo los datos');
+        return redirect()->route('inicio');
+
     }
 
     /**
@@ -95,6 +121,12 @@ class EventoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        
+        $evento = Evento::find($id);
+ 
+        $evento->delete();
+ 
+         Session::flash('message',$evento->full_name.'evento eliminado');
+        return redirect()->route('inicio');
     }
 }

@@ -9,19 +9,30 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">Eventos e información general  </div>
 				<div class="panel-body">
-				<div class="alert alert-info" role="alert">
-					<a href="{{route('evento.create')}}"class="btn btn-primary">
-						Crear un nuevo evento
-					</a>
+					@if (Auth::user())	
+						<div class="alert alert-info" role="alert">
 					
+							<a href="{{route('evento.create')}}"class="btn btn-primary">
+								Crear un nuevo evento
+							</a>
+						</div>
+					@endif
 					
-					
+					@if (Session::has('message'))
 
-				</div>
-				<br>
-				@foreach($eventos as $evento)
-				@include('eventos/partials/item',compact('evento'))
-				@endforeach
+							<p class="alert alert-info"> {{Session::get('message') }}</p>
+
+					@endif
+
+					
+						@include('eventos.partials.search')
+						
+
+					
+					<br>
+					@foreach($eventos as $evento)
+					@include('eventos/partials/item',compact('evento'))
+					@endforeach
 				</div>
 					{!!$eventos->render()!!}
 			</div>

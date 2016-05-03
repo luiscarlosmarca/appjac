@@ -24,8 +24,9 @@
  					<td>{{$beneficiado->direccion}}</td>
  								 						
  				   <td>
- 									
+ 						@if (Auth::user())				
  						<a href="{{route('beneficiado.detail',$beneficiado)}}"><img src="/upload/detalles.png" height="50" width="50" alt="Ver detalles"></a>
+ 						@endif
  						<a  href="{{route('beneficiado.certificado',$beneficiado)}}"><img src="/upload/pdf.jpg" height="50" width="50" alt="Generar Certificado"></a>
  				    </td>
  								

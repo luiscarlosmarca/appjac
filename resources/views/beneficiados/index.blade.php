@@ -14,6 +14,16 @@
 					@endif
 
 				<div class="panel-body">
+					@if (Auth::user())	
+						
+							<div class="alert alert-info" role="alert">
+						
+								<a href="{{route('beneficiado.create')}}"class="btn btn-primary">
+									Crear un nuevo beneficiado
+								</a>
+							</div>
+
+						@endif
 					@include('beneficiados.partials.search')
 					@include('beneficiados.partials.table')
 				</div>

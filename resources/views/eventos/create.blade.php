@@ -44,6 +44,12 @@
 						 </div>
 
 
+						 <div class="form-group">
+
+						 	{!! Form::label('imagen','Imagen del evento')!!}
+										{!! Form::file('imagen',null,['class'=>'form-control'])!!}
+										Suba una imagen JPG O PNG MAX 2MB	<br>
+						 </div>
 
 
 																

@@ -9,9 +9,9 @@
  				<th><font color=#2D4259 size="4" face="Lucida grande"> <center>Numero de resolucion</th>
 				<th><font color=#2D4259 size="4" face="Lucida grande"> <center>Presidente (a)</th>	
 							 
-
+	@if (Auth::user())	
  				<th><font color=#2D4259 size="4" face="Lucida grande"> <center>	Acciones</th>	
-								
+			 @endif					
  								
 
  							
@@ -25,12 +25,15 @@
  					
  					<td><center>{{$junta->numResolucion}}</td>
  					<td><center>{{$junta->nombreP}}</td>
- 												
+ 					@if (Auth::user())								
  				   <td>
- 									
+ 						
  						<a href="{{route('junta.detail',$junta)}}"><img src="/upload/detalles.png" height="50" width="50" alt="Ver detalles"></a>
+ 					
  						
  				    </td>
+ 				    @endif
+
  								
  			</tr>
 

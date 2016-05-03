@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Session;
 
 class Evento extends Model
 {
@@ -20,15 +21,15 @@ class Evento extends Model
 	
 		if (trim($nombre) != "")
 		{
-		$query->where(\DB::raw("CONCAT(nombres)"),"LIKE","%$nombre%");
-		Session::flash('message','Nombre:'.' '.$nombre.'  ' .' Resultado de la busqueda');	
+		$query->where(\DB::raw("CONCAT(nombre)"),"LIKE","%$nombre%");
+		Session::flash('message','Nombre:'.' '.$nombre.'  ' .'Resultado de la busqueda');	
 		}
 		
 	}
 
-	public static function filter($nombre)
+	public static function filtro($nombre)
 	{
-			return Beneficiado::nombre($nombre)
+			return Evento::nombre($nombre)
 				
 				
 				->orderBy('created_at','ASC')

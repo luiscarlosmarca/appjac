@@ -9,13 +9,26 @@
 					
 					@if (Session::has('message'))
 
-					<p class="alert alert-info"> {{Session::get('message') }}</p>
+						<p class="alert alert-info"> {{Session::get('message') }}</p>
 
 					@endif
 
+					@if (Auth::user())	
+						
+							<div class="alert alert-info" role="alert">
+						
+								<a href="{{route('junta.create')}}"class="btn btn-primary">
+									Crear una nueva junta
+								</a>
+							</div>
+
+						@endif
+
+
 				<div class="panel-body">
-					@include('juntas.partials.search')
-					@include('juntas.partials.table')
+					
+						@include('juntas.partials.search')
+						@include('juntas.partials.table')
 				</div>
 			</div>
 		

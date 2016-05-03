@@ -9,13 +9,30 @@
 				<div class="panel-body">
 					@include('error')
 				{!!Form::open(['route'=>'beneficiado.store','method'=>'POST','enctype'=>'multipart/form-data'])!!}
-								
-									
-										<button type="submit" class="btn btn-primary">
-											Crear Beneficiado
-										</button>
 
-									</p>
+						<div class="col-sm-6">
+						<div class="form-group">
+									{!!Form::label('Cedula', 'Cedula') !!}
+							   		{!!Form::text('cedula',null,['class'=>'form-control floating-label','requiered']) !!}
+						 </div>
+						 </div>
+						 <div class="col-sm-6">
+						 <div class="form-group">
+									{!!Form::label('ciudad', 'Ciudad de la Cedula') !!}
+							   		{!!Form::text('ciudadCC',null,['class'=>'form-control floating-label','requiered']) !!}
+						 </div>
+						  </div>
+
+						@include('beneficiados.partials.fields')
+						
+						{!! Form::label('image','Imagen del recibo publico del domicilio')!!}
+						{!! Form::file('reciboPublico',null,['class'=>'form-control'])!!}
+						Suba una imagen JPG O PNG MAX 2MB	<br>
+						<button type="submit" class="btn btn-primary">
+											Crear Beneficiado
+						</button>
+
+									
 				{!! Form::close() !!}
 
 					</div>

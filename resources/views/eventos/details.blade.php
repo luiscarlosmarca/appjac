@@ -27,7 +27,7 @@
 						</div>
 							
 							<div class="col-md-4">
-							  	<a href="/upload/{{$evento->imagen}}.jgp" target="black"><img src="/upload/eventos/{{$evento->imagen}}.jpg" height="380" width="200"></a>
+							  	<a href="/upload/{{$evento->imagen}}" target="black"><img src="/upload/eventos/{{$evento->imagen}}" height="380" width="200"></a>
 							</div>
 						</div>
 

@@ -23,7 +23,7 @@ class DatabaseSeeder extends Seeder
             'password_resets',
             
             'eventos',
-            'comentarios',
+            
             'beneficiados',
            
 

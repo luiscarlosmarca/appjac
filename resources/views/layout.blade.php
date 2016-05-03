@@ -51,17 +51,28 @@
 
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
+				@if (Auth::guest())
+
 					<li><a href="{{route('inicio')}}">Inicio</a></li>
 					<li><a href="{{route('beneficiado')}}">Beneficiados</a></li>
+					<li><a href="{{route('junta')}}">Juntas de Accion Comunal</a></li>
+
 				
+				@else
 					
 
-					<li><a href="{{route('beneficiado.create')}}">Crear un nuevo beneficiado</a></li>
-
-					<li><a href="{{route('junta')}}">Juntas</a></li>
-
-					<li><a href="{{route('junta.create')}}">Crear una nueva Junta</a></li>
 					
+					<li><a href="{{route('inicio')}}">Inicio</a></li>
+					<li><a href="{{route('beneficiado')}}">Beneficiados</a></li>
+					<li><a href="{{route('junta')}}">Juntas de Accion Comunal</a></li>
+
+					
+					
+
+					
+
+
+				@endif
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">

@@ -29,7 +29,7 @@ Route::get('/beneficiados',[//mostrar listado de beneficiados
 
 
 
-//*** admin
+//*** admin*******************///////////////
 
 Route::group(['middleware'=>'auth'], function(){
 //****beneficiado
@@ -83,10 +83,7 @@ Route::group(['middleware'=>'auth'], function(){
 	//** Eventos
 	
 
-	Route::patch('/ver-detalles-eventos/{id}',[
-	'uses'	=>'EventoController@details',
-	'as'	=>'evento.details'
-	]);
+	
 	
 	Route::get('/crear-evento/',[
 	'uses'	=>'EventoController@create',
@@ -99,9 +96,24 @@ Route::group(['middleware'=>'auth'], function(){
 	]);
 
 
+	Route::get('/editar-eventos/{id}',[
+	'uses'	=>'EventoController@edit',
+	'as'	=>'evento.edit'
+	]); 
+
+	Route::patch('/editar-eventos/{id}',[
+	'uses'	=>'EventoController@update',
+	'as'	=>'evento.update'
+	]);
+
+	Route::delete('/eliminar-eventos/{id}',[
+	'uses'	=>'EventoController@destroy',
+	'as'	=>'evento.destroy'
+	]);
+
 });
 //***
-
+/////////////**** Publico*****//////////////
 //certficados
 
 Route::get('/generar-certificado/{id}',[
@@ -121,9 +133,9 @@ Route::get('/juntas',[//mostrar listado de juntas
 
 ///***********
 //eventos
-Route::get('/ver-detalles-eventos/{id}',[//ver el detalle de cada junta
+Route::get('/ver-detalles-eventos/{id}',[
 	'uses'	=>'EventoController@details',
-	'as'	=>'evento.detail'
+	'as'	=>'evento.details'
 	]);
 
 
