@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Appjac\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Junta;
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
-use App\Http\Requests\CreateJuntaRequest; 
-use App\Http\Requests\EditJuntaRequest;   
+use Appjac\Junta;
+use Appjac\Http\Requests;
+use Appjac\Http\Controllers\Controller;
+use Appjac\Http\Requests\CreateJuntaRequest; 
+use Appjac\Http\Requests\EditJuntaRequest;   
 
 use Illuminate\Support\Facades\Session;
 class JuntaController extends Controller

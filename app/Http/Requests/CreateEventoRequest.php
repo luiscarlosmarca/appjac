@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Requests;
+namespace Appjac\Http\Requests;
 
-use App\Http\Requests\Request;
+use Appjac\Http\Requests\Request;
 
 class CreateEventoRequest extends Request
 {

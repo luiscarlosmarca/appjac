@@ -11,7 +11,7 @@
 |
 */
 
-$factory->define(App\User::class, function (Faker\Generator $faker) {
+$factory->define(Appjac\User::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->name,
         'email' => $faker->safeEmail,
@@ -21,7 +21,7 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
 });
 
 
-$factory->define(App\Junta::class, function (Faker\Generator $faker) {
+$factory->define(Appjac\Junta::class, function (Faker\Generator $faker) {
     return [
         'nombre'			 => $faker->name,
        
@@ -42,7 +42,7 @@ $factory->define(App\Junta::class, function (Faker\Generator $faker) {
 });
 
 
-$factory->define(App\Evento::class, function (Faker\Generator $faker) {
+$factory->define(Appjac\Evento::class, function (Faker\Generator $faker) {
     return [
         'nombre'			 => $faker->name,
         'detalles'		     => $faker->words(5, true),
@@ -55,7 +55,7 @@ $factory->define(App\Evento::class, function (Faker\Generator $faker) {
 });
 
 
-$factory->define(App\Beneficiado::class, function (Faker\Generator $faker) {
+$factory->define(Appjac\Beneficiado::class, function (Faker\Generator $faker) {
     return [
         'nombres'			 => $faker->name,
         'apellidos'		     => $faker->lastname,

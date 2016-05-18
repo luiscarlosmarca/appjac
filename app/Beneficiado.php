@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace Appjac;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Session;
@@ -51,7 +51,7 @@ class Beneficiado extends Model
 	public function junta()
    {
    	//El beneficiado esta afiliado a una junta
-   	return $this->hasOne('App\Junta','id','junta_id');
+   	return $this->hasOne('Appjac\Junta','id','junta_id');
    }
 
    public function getAgeAttribute()

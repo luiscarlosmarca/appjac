@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Appjac\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Evento;
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
-use App\Http\Requests\CreateEventoRequest; 
+use Appjac\Evento;
+use Appjac\Http\Requests;
+use Appjac\Http\Controllers\Controller;
+use Appjac\Http\Requests\CreateEventoRequest; 
 use \Input as Input;
 use Illuminate\Support\Facades\Session;
 
@@ -46,7 +46,7 @@ class EventoController extends Controller
         {
 
             $file = Input::file('imagen');
-            $file->move('upload',$file->getClientOriginalName());
+            $file->move('upload/eventos',$file->getClientOriginalName());
             $image='img src="/upload/eventos'.$file->getClientOriginalName().'"';
                 
             $eventos = new Evento($request->all());

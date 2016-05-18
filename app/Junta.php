@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace Appjac;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Session;
@@ -20,7 +20,7 @@ class Junta extends Model
     public function beneficiados()
     {
         // una junta puede tener muchos afiliados
-        return $this->hasMany('App\Beneficiado');
+        return $this->hasMany('Appjac\Beneficiado');
     }
 
     public function scopeBarrio($query,$barrio)

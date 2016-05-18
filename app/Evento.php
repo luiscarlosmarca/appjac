@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace Appjac;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Session;

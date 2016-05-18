@@ -140,10 +140,10 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        Appjac\Providers\AppServiceProvider::class,
+        Appjac\Providers\AuthServiceProvider::class,
+        Appjac\Providers\EventServiceProvider::class,
+        Appjac\Providers\RouteServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
 
 

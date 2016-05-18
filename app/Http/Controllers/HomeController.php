@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Appjac\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
+use Appjac\Http\Requests;
+use Appjac\Http\Controllers\Controller;
 
 class Homecontroller extends Controller
 {

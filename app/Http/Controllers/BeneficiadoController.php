@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
-use App\Beneficiado;
+namespace Appjac\Http\Controllers;
+use Appjac\Http\Requests;
+use Appjac\Http\Controllers\Controller;
+use Appjac\Beneficiado;
 use \Input as Input;
-use App\Http\Requests\CreateBeneficiadoRequest; 
-use App\Http\Requests\EditBeneficiadoRequest;   
+use Appjac\Http\Requests\CreateBeneficiadoRequest; 
+use Appjac\Http\Requests\EditBeneficiadoRequest;   
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Barryvdh\DomPDF\Facade as PDF;
