@@ -111,6 +111,15 @@ Route::group(['middleware'=>'auth'], function(){
 	'as'	=>'evento.destroy'
 	]);
 
+
+	// Registration routes...
+	Route::get('crear-cuenta',[
+	'uses'	=> 'Auth\AuthController@getRegister',
+	'as'	=>'registro'
+	]);
+
+Route::post('crear-cuenta', 'Auth\AuthController@postRegister');	
+
 });
 //***
 /////////////**** Publico*****//////////////
@@ -162,10 +171,3 @@ Route::get('cerrar-sesión', [
 ]);  
 
 
-// Registration routes...
-Route::get('crear-cuenta',[
-'uses'	=> 'Auth\AuthController@getRegister',
-'as'	=>'registro'
-]);
-
-Route::post('crear-cuenta', 'Auth\AuthController@postRegister');	

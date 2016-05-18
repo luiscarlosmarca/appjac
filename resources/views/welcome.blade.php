@@ -38,6 +38,7 @@
     <body>
         <div class="container">
             <div class="content">
+            <center><img src="./upload/logo.png" > </center>
                 <div class="title"><a href="/inicio">App web JAC 1.0</a></div>
             </div>
         </div>

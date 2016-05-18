@@ -28,7 +28,7 @@ class EditJuntaRequest extends Request
             'nombre'        =>'required|string',
             'nombreP'       =>'required|string',
             'nombreS'       =>'required|string',
-            'feResolucion'  =>'required|date',
+           
             
             'barrio'        =>'required|string',
             'direccionSede' =>'required',

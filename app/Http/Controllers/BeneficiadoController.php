@@ -109,12 +109,12 @@ class BeneficiadoController extends Controller
     public function update(EditBeneficiadoRequest $request,$id)
     {
 
-    $beneficiado=Beneficiado::findOrFail($id);
-    $beneficiado->fill($request->all());
-    $beneficiado->save();
+        $beneficiado=Beneficiado::findOrFail($id);
+        $beneficiado->fill($request->all());
+        $beneficiado->save();
 
-    Session::flash('message',$beneficiado->full_name.' Se actualizo los datos');
-    return redirect()->route('beneficiado');
+        Session::flash('message',$beneficiado->full_name.' Se actualizo los datos');
+        return redirect()->route('beneficiado');
 
     }
 public function details($id)

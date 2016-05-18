@@ -16,11 +16,13 @@ class CreateJuntasTable extends Migration
         Schema::create('juntas', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre');
-            $table->date('feResolucion');
+            $table->string('feResolucion');
+            $table->string('nit');
             $table->integer('numResolucion');
             $table->string('barrio');
             $table->string('direccionSede');
             $table->string('presidenteCC');
+            $table->string('ciudadCCP');
             $table->string('nombreP');
             $table->string('nombreS');
             $table->string('secretariaCC');

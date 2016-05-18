@@ -24,17 +24,19 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
 $factory->define(App\Junta::class, function (Faker\Generator $faker) {
     return [
         'nombre'			 => $faker->name,
-        'feResolucion'		 => $faker->year($max = 'now'),
+       
         'numResolucion' 	 => rand(7891234,92313242),
+        'nit'                => rand(7891234,92313242),
         'barrio'			 => $faker->randomElement(['Purnio','Las Ferias','Guarino','La Concordia']),
         'nombreP'            => $faker->name,
         'nombreS'            => $faker->name,
         'presidenteCC' 		 => rand(7891234,92313242),
+        'ciudadCCP'          => $faker->randomElement(['La Dorada','Pto Boyaca','Medellin','Bogota']),
         'secretariaCC'		 => rand(7891234,92313242),
         'direccionSede'		 => $faker->address,
         'telefono'			 => rand(7891234,92313242),
-        'firmaS'			 =>$faker->randomElement(['foto1','foto2','foto3','foto4']),
-        'firmaP'			 =>$faker->randomElement(['foto1','foto2','foto3','foto4']),
+        'firmaS'			 =>$faker->randomElement(['foto1.jpg','foto2.jpg','foto3.jpg','foto4.jpg']),
+        'firmaP'			 =>$faker->randomElement(['foto1.jpg','foto2.jpg','foto3.jpg','foto4.jpg']),
         
     ];
 });
@@ -46,7 +48,7 @@ $factory->define(App\Evento::class, function (Faker\Generator $faker) {
         'detalles'		     => $faker->words(5, true),
         'fecha' 			 => $faker->dateTime($max = 'now'),
         'lugar'		   		 => $faker->randomElement(['La Dorada','Pto Boyaca','Medellin','Bogota']),
-        'imagen'			 => $faker->randomElement(['foto1','foto2','foto3','foto4']),
+        'imagen'			 => $faker->randomElement(['foto1.jpg','foto2.jpg','foto3.jpg','foto4.jpg']),
 
         
     ];
@@ -61,13 +63,13 @@ $factory->define(App\Beneficiado::class, function (Faker\Generator $faker) {
         'feNa' 			     => $faker->date($format = 'Y-m-d', $max = 'now'),
         'cedula'		   	 => rand(7891234,92313242),
         'ciudadCC'			 => $faker->randomElement(['La Dorada','Pto Boyaca','Medellin','Bogota']),
-        'reciboServicio'	 => $faker->randomElement(['foto1','foto2','foto3','foto4']),
+        'reciboServicio'	 => $faker->randomElement(['foto1.jpg','foto2.jpg','foto3.jpg','foto4.jpg']),
         'telefono'			 => rand(7891234,92313242),
         'direccion'			 => $faker->address,
         'casaPropia'		 => true,
         'feResidencia'		 => $faker->date($format = 'Y-m-d', $max = 'now'),
         
-        'junta_id'			 => rand(1,5),
+        'junta_id'			 => 1,
     ];
 });
 

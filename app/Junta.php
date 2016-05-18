@@ -15,7 +15,7 @@ class Junta extends Model
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['barrio','nombre','numResolucion','feResolucion','nombreP','nombreS','presidenteCC','secretariaCC','direccionSede','telefono'];
+	protected $fillable = ['barrio','nombre','numResolucion','nit','feResolucion','nombreP','nombreS','presidenteCC','ciudadCCP','secretariaCC','direccionSede','telefono'];
 	
     public function beneficiados()
     {

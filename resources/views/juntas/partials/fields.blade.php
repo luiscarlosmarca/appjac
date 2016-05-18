@@ -22,7 +22,7 @@
 		  <div class="form-group">
 
 							
-									{!!Form::label('Fena', 'Fecha de resolucion AAAA-MM-DD') !!}
+									{!!Form::label('Fena', 'Fecha de resolucion DD de MM del AAAA') !!}
 							   		{!!Form::text('feResolucion',null,['class'=>'form-control floating-label','requiered']) !!}
 		 </div>
 
@@ -31,6 +31,14 @@
 							
 									{!!Form::label('Dirección', 'Direccion de la sede') !!}
 							   		{!!Form::text('direccionSede',null,['class'=>'form-control floating-label','requiered']) !!}
+		 </div>
+
+
+  		<div class="form-group">
+
+							
+									{!!Form::label('nit', 'Nit') !!}
+							   		{!!Form::text('nit',null,['class'=>'form-control floating-label','requiered']) !!}
 		 </div>
 
 
@@ -44,7 +52,7 @@
 		 <div class="form-group">
 
 							
-									{!!Form::label('Telefono', 'Telefono') !!}
+									{!!Form::label('Telefono', 'Telefono de la presidente') !!}
 							   		{!!Form::text('telefono',null,['class'=>'form-control floating-label','requiered']) !!}
 		 </div>
 
@@ -63,6 +71,12 @@
 		 </div>
 
 
+ 		<div class="form-group">
+
+							
+									{!!Form::label('ciudadCCP', 'Ciudad de la Cedula del presidente') !!}
+							   		{!!Form::text('ciudadCCP',null,['class'=>'form-control floating-label','requiered']) !!}
+		 </div>
 		 
 		  <div class="form-group">
 

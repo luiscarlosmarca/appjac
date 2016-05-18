@@ -62,8 +62,10 @@ class Beneficiado extends Model
 	
 	public function getHoyAttribute()
 	{
-		return Carbon::now()->format('d-m-Y');
+		
+		$date = Carbon::now();
 
+		return  $date = $date->format(' jS \\ F Y ');
 		
 	}
 }

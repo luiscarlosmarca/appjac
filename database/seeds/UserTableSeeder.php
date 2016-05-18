@@ -14,20 +14,20 @@ class UserTableSeeder extends Seeder
     {
        // DB::table('users')->truncate(); //elimina la bd cada vez que realizo el seed
 
-        factory(App\User::class,10)->create();
+        
        
         factory(App\User::class)->create([
-            'name'  =>'luiscarlosmarca',
-            'email' =>'root@app.com.co',
+            'name'  =>'Administrador',
+            'email' =>'admin@appjac.com.co',
             
-            'password'=>bcrypt('secret')    
+            'password'=>bcrypt('secret.purnio')    
             ]);
 
-        factory(App\Junta::class,20)->create();
+        factory(App\Junta::class,1)->create();
         
-        factory(App\Evento::class,20)->create();
+        factory(App\Evento::class,1)->create();
 
-        factory(App\Beneficiado::class,20)->create();
+        factory(App\Beneficiado::class,1)->create();
 
        
        
